@@ -45,7 +45,7 @@ static struct murl__MouseButtonMap murl__mouse_buttons[] = {
 void murl_handle_mouse_buttons_input_ex(mu_Context *ctx, int x, int y) {
   for (size_t index = 0;; index++) {
     struct murl__MouseButtonMap button = murl__mouse_buttons[index];
-    if (button.rl == -1U) {
+    if (button.rl == -1) {
       break;
     }
     if (IsMouseButtonPressed(button.rl)) {
@@ -72,7 +72,7 @@ static struct murl__KeyboardKeyMap murl__keyboard_keys[] = {
 void murl_handle_keyboard_input(mu_Context *ctx) {
   for (size_t index = 0;; index++) {
     struct murl__KeyboardKeyMap key = murl__keyboard_keys[index];
-    if (key.rl == -1U) {
+    if (key.rl == -1) {
       break;
     }
     if (IsKeyPressed(key.rl)) {
